@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Bienvenue sur notre super site' %}
+
+{% block body %}
+    <div class="jumbotron text-center bg-info text-white">
+        <h1>Agence Lorem</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores deleniti distinctio impedit nemo officia. Nemo quam, unde? Aut commodi consequuntur est, laudantium maxime minus, necessitatibus optio quod recusandae tempora veritatis?</p>
+
+    </div>
+
+    <div class="container">
+        <h2>Les derniers biens</h2>
+            <div class="row flex">
+                {% for property in properties %}
+                    <div class="col-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a href="{{ path('property.show', {id: property.id, slug: property.slug}) }}">{{ property.title }}</a>
+                                    <p class="card-text">{{ property.title }} ({{ property.postalCode }})</p>
+                                    <div class="text-primary font-weight-bold h2">
+                                        {{ property.getFormattedPrice() }}
+                                    </div>
+
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+    </div>
+
+
+{% endblock %}
