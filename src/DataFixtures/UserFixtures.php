@@ -19,6 +19,9 @@ class UserFixtures extends Fixture
         $this->userPasswordEncoder = $userPasswordEncoder;
     }
 
+    /**
+     * @param ObjectManager $manager
+     */
     public function load(ObjectManager $manager)
     {
         // $product = new Product();
