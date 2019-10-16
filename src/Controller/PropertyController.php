@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Option;
 use App\Entity\Property;
 use App\Entity\PropertySearch;
 use App\Form\PropertySearchType;
@@ -45,7 +46,7 @@ class PropertyController extends AbstractController
         return $this->render('property/index.html.twig',[
             'current_menu' => 'properties',
             'properties' =>$properties,
-            'form'      => $form->createView()
+            'form'      => $form->createView(),
         ]);
     }
 
